@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Médico</title>
+
+    <link href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <h1>cadastrar Médicos</h1>
+        <form action="/api/medicos" method="POST">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nome</label>
+                <input type="text" class="form-control" id="medico-nome" placeholder="Coloque nome..." required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Especialidade</label>
+                <input type="text" class="form-control" id="medico-especialidade" placeholder="Coloque especialidade..."
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">CRM</label>
+                <input type="text" class="form-control" id="medico-crm" placeholder="Coloque CRM..." required>
+            </div>
+            <div>
+                
+                <button type="button" class="btn btn-success" onclick="criarMedico()">Cadastrar</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/medicos-page'">Voltar</button>
+            </div>
+
+        </form>
+            
+
+</body>
+<script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/criarMedico.js') }}"></script>
+
+</html>

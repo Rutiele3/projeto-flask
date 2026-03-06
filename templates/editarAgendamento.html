@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários - Clinica</title>
+
+    <link href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Editar Agendamento</h1>
+
+    <form method="POST">
+
+        <label>Data:
+            <input type="date" name="data" value="{{ consulta.data_hora.strftime('%Y-%m-%d') }}" required>
+        </label>
+            
+        <label>Hora:
+            <input type="time" name="hora" value="{{ consulta.data_hora.strftime('%H:%M') }}" required>
+        </label>
+            
+        <label>Status: 
+            
+            <select name="status" required>
+                <option value="agendado" {% if consulta.status=="agendado" %}selected{% endif %}>
+                    Agendado
+                </option>
+                
+                <option value="concluido" {% if consulta.status=="concluido" %}selected{% endif %}>
+                    Concluído
+                </option>
+                
+                <option value="cancelado" {% if consulta.status=="cancelado" %}selected{% endif %}>
+                    Cancelado
+                </option>
+            </select>
+        </label>
+
+        <button type="submit">Salvar Alterações</button>
+
+    </form>
+</body>
+    <script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/editarAgendamento.js') }}"></script>
+</html>

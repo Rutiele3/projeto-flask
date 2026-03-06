@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar usuario</title>
+
+    <link href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Criar usuário</h1>
+    <form>
+        <div class="form-group">
+            <label for="">Nome</label>
+            <input type="text" class="form-control" id="usuario-nome" placeholder="Coloque nome..." required>
+        </div>
+
+        <div>
+            <label for="">Email</label>
+            <input type="email" class="form-control" id="usuario-email" aria-describedby="emailHelp"
+                placeholder="Coloque email..." required>
+        </div>
+
+        <div>
+            <label for="">Senha</label>
+            <input type="password" class="form-control" id="usuario-senha" placeholder="Coloque senha..." required>
+        </div>
+        <button type="button" class="btn btn-success" onclick="criarUsuario()">Cadastrar</button>
+
+    </form>
+</body>
+<script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/criarUsuario.js') }}"></script>
+
+</html>

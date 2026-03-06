@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Editar usuário</h1>
+    <form>
+        <div class="form-group">
+
+            <label for="exampleInputEmail1">Nome</label>
+            <input type="text" class="form-control" id="usuario-nome" value="{{usuario.nome}}" placeholder="Coloque nome..." required>
+
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="usuario-email" value="{{usuario.email}}"aria-describedby="emailHelp"
+                placeholder="Coloque email..." required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="atualizarUsuario()">Salvar</button>
+        
+    </form>
+
+</body>
+
+<script src="bootstrap/bootstrap.bundle.min.js"></script>
+<script src="updateUsuario.js"></script>
+
+</html>

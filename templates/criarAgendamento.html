@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Agendamento</title>
+    <link href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Novo Agendamento</h1>
+
+    <form method="post" action="{{ url_for('criar_agendamento') }}">
+        <div class="mb-3">
+            <label for="medico_id">Médico</label>
+            <select id="medico_id" name="medico_id" class="form-control" required>
+                <option value="">Selecione um médico</option>
+                {% for medico in medicos %}
+                <option value="{{ medico.id }}">{{ medico.nome }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="cliente_id">Cliente</label>
+            <select id="cliente_id" name="cliente_id" class="form-control" required>
+                <option value="">Selecione um cliente</option>
+                {% for cliente in clientes %}
+                <option value="{{ cliente.id }}">{{ cliente.nome }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" class="form-control" title="Selecione a data do agendamento" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="horario">Horário</label>
+            <input type="time" id="horario" name="horario" class="form-control" title="Selecione o horário do agendamento" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Criar Agendamento</button>
+        <a class="btn btn-secondary" href="{{ url_for('listar_agendamentos') }}">Voltar</a>
+    </form>
+    <script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/criarAgendamento.js') }}"></script>
+</body>
+
+</html>

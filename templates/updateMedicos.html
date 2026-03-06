@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<h1>Editar Medico</h1>
+    <form>
+        <div class="form-group">
+            <label for="usuario_id" class="form-label">Nome</label>
+            <select class="form-select" id="usuario_id" required>
+                <option value="">Selecione um usuário</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="produto_id" class="form-label">Especialidade</label>
+            <select class="form-select" id="produto_id" required>
+                <option value="">Selecione um produto</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="crm" class="form-label">CRM</label>
+            <select class="form-select" id="crm" required>
+                <option value="">Coloque o CRM...</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" onclick="atualizarMedico()">Atualizar</button>
+        <a href="medicos.html" class="btn btn-secondary">cancelar</a>
+    </form>
+
+</body>
+
+<script src="bootstrap/bootstrap.bundle.min.js"></script>
+<script src="updateMedicos.js"></script>
+
+</html>
